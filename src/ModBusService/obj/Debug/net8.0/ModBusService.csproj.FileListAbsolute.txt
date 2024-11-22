@@ -1,0 +1,13 @@
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.csproj.AssemblyReference.cache
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.AssemblyInfoInputs.cache
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.AssemblyInfo.cs
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.csproj.CoreCompileInputs.cache
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.sourcelink.json
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\bin\Debug\net8.0\ModBusService.deps.json
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\bin\Debug\net8.0\ModBusService.dll
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\bin\Debug\net8.0\ModBusService.pdb
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.dll
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\refint\ModBusService.dll
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ModBusService.pdb
+C:\Users\Frizzi\Documents\GIT\Modbus\modbus_hslIntegration\src\ModBusService\obj\Debug\net8.0\ref\ModBusService.dll
