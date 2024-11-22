@@ -36,7 +36,7 @@
       "code": "NU1904",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'System.Text.Encodings.Web' 4.5.0 tem uma crítico vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-ghhp-997w-qr28",
+      "message": "Package 'System.Text.Encodings.Web' 4.5.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-ghhp-997w-qr28",
       "libraryId": "System.Text.Encodings.Web",
       "targetGraphs": [
         "net8.0"
