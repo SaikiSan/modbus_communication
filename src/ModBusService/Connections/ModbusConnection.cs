@@ -2,7 +2,6 @@ using System;
 using Microsoft.Extensions.Options;
 using ModBusService.Communications;
 using ModBusService.Factories;
-using ModBusService.Models;
 using ModBusService.Configurations;
 
 namespace ModBusService.Connections;

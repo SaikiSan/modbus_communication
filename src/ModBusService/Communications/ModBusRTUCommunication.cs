@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Options;
-using ModBusService.Models;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;

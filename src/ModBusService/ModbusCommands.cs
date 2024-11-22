@@ -7,7 +7,6 @@ using FluentModbus;
 using ModBusService.Communications;
 using ModBusService.Connections;
 using ModBusService.Helpers;
-using ModBusService.Models;
 using Polly;
 using Polly.Fallback;
 using Polly.Retry;
@@ -29,12 +28,12 @@ namespace ModBusService
                 await _modBusCommunication.TryConnectAsync();
             });
         }
-        public async Task SendValue(ModbusMessage message)
+        public async Task SendValue(string address, short value)
         {
             await _modBusCommunication.TryConnectAsync();
             await _modbusPolicy.ExecuteAsync(async () => 
             {
-                var communicationResult = await _modBusCommunication.WriteAsync(message.Address.ToString(), message.Value);
+                var communicationResult = await _modBusCommunication.WriteAsync(address, value);
 
                 return communicationResult.IsSuccess;
             });
@@ -155,10 +154,10 @@ namespace ModBusService
             return result[0];
         }
 
-        public async Task<List<ModbusMessage>> ReceiveValues(int initialAddress, int endAddress)
+        public async Task<Dictionary<int, int>> ReceiveValues(int initialAddress, int endAddress)
         {
             await _modBusCommunication.TryConnectAsync();
-            var values = new List<ModbusMessage>();
+            var values = new Dictionary<int, int>();
             
             await _modbusPolicy.ExecuteAsync(async () => 
             {
@@ -167,7 +166,7 @@ namespace ModBusService
                 {
                     foreach (var item in communicationResult.Content)
                     {
-                        values.Add(new ModbusMessage(initialAddress, item));
+                        values.Add(initialAddress, item);
                         initialAddress++;
                     }
                 }

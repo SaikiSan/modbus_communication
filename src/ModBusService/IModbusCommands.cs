@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ModBusService.Models;
 
 namespace ModBusService
 {
     public interface IModbusCommands
     {
-        Task SendValue(ModbusMessage message);
+        Task SendValue(string address, short value);
         Task SendBool(string address, bool value);
         Task SendFloat(int address, float values);
         Task SendFloatList(int address, List<float> value);
@@ -16,6 +15,6 @@ namespace ModBusService
         Task<short> ReceiveValue(int address);
         Task<double> ReadFloat(int address);
         Task<bool> ReadBool(int address);
-        Task<List<ModbusMessage>> ReceiveValues(int initialAddress, int EndAddress);
+        Task<Dictionary<int, int>> ReceiveValues(int initialAddress, int EndAddress);
     }
 }
