@@ -12,13 +12,25 @@ using ModBusService.Configurations;
 
 namespace ModBusService.Communication
 {
-    public class ModBusRTUCommunication : ModbusTcpNet, IModbusCommunication
+    public class ModBusRTUCommunication : ModbusRtu, IModbusCommunication
     {
         
         private readonly Policy _policyModBus;
         public ModBusRTUCommunication(IOptions<ModBusConnectionConfig> connection)
         {
-            
+            _policyModBus = Policy.Handle<SocketException>()
+                .Or<IOException>().WaitAndRetry(new[]
+                {
+                    TimeSpan.FromMilliseconds(500),
+                    TimeSpan.FromMilliseconds(500),
+                    TimeSpan.FromMilliseconds(500)
+                });
+
+            SerialPortInni(connection.Value.COMName
+                            , connection.Value.BaudRate
+                            , connection.Value.DataBits
+                            , connection.Value.StopBits
+                            , connection.Value.Parity);
         }
 
         public async Task TryConnectAsync()
@@ -27,7 +39,7 @@ namespace ModBusService.Communication
                 return;
             try
             {
-                await _policyModBus.Execute(ConnectServerAsync);
+                await _policyModBus.Execute(TryConnectAsync);
             }
             catch (Exception){
             }
@@ -35,7 +47,8 @@ namespace ModBusService.Communication
 
         public async Task Disconnect()
         {
-            await ConnectCloseAsync();
+            await Task.Yield();
+            Close();
         }
     }
 }
